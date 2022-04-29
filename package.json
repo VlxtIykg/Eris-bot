@@ -1,0 +1,22 @@
+{
+  "name": "eris",
+  "version": "1.0.0",
+  "description": "Lessons for me",
+  "main": "index.js",
+  "scripts": {
+    "test": "-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/VlxtIykg/Eris-bot.git"
+  },
+  "author": "Kami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VlxtIykg/Eris-bot/issues"
+  },
+  "homepage": "https://github.com/VlxtIykg/Eris-bot#readme",
+  "dependencies": {
+    "eris": "^0.16.1"
+  }
+}
