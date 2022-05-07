@@ -10,13 +10,15 @@ export class Ready extends Event {
         console.log("hi");
     }
     async run() {
-        console.log('> Adding items');
+        console.log('> Adding items!');
         try {
         let commands = readdirSync("./commands").filter((file => file.endsWith(".js")))
-        console.log(commands);
+        //console.log(commands);
         for (const file of commands) {
-            const pull = import(`./commands/${file}`);
-            const command = new pull(this.client)
+            const pull = await import(`../commands/${file}`);
+            const wantedClass = pull.Help
+            //console.log(pull);
+            const command = new wantedClass(this.client)
             this.client.items.set(command.name.toLowerCase(), command)
             console.log(`Added ` + command.name.toLowerCase());
             if (command.aliases && Array.isArray(command.aliases))
@@ -26,9 +28,9 @@ export class Ready extends Event {
                 }
         }
         } catch (error) {
-            console.error(`${error}`)
+            console.error(`${error} - ready.js file line 31`)
         }
-        console.log(' > Done');
+        console.log('> Done!');
     }
 }
-console.log('Does this even work? Console log where?');
+//console.log('Does this even work? Console log where?');

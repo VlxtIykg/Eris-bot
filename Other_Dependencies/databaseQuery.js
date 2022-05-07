@@ -1,7 +1,7 @@
 import db from "better-sqlite3";
 import * as dbPathImport from './pathForDb.js'
 
-const Database = new db(dbPathImport.dbPath(import.meta.url, '../data/profits.db'), {verbose:console.log});
+const Database = new db(dbPathImport.dbPath(import.meta.url, '../data/profits.db')/* , {verbose:console.log} */);
 
 const table = 'CREATE TABLE IF NOT EXISTS profits_table (day INTEGER PRIMARY KEY AUTOINCREMENT, profits INTEGER, userID INTEGER NOT NULL)'
 Database.exec(table)

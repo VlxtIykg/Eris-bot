@@ -6,7 +6,7 @@ const categories = fs.readdirSync('./commands/')
 import { prefix } from '../../data/parser.js'
 let prefix = prefix('../data')
 
-module.exports = class Help extends Command {
+export class Help extends Command {
 	constructor(client) {
 		super(client, {
 			name: 'help',

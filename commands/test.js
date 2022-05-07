@@ -2,7 +2,7 @@ import { Command } from "../Structures/Command.js"
 import { ClassicEmbed } from "../Other_Dependencies/embed.js"
 import { bot } from "../onStart/startUp.js"
 
-export class test extends Command {
+export class Help extends Command {
     constructor(client) {
         super(client, {
             name: 'test',

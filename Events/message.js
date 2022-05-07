@@ -1,7 +1,8 @@
 import { bot } from '../onStart/startUp.js'
 import { Event } from '../Structures/Event.js'
 import { prefix } from '../data/parser.js';
-console.log(Event);
+//console.log(Event);
+
 export class Message extends Event {
     constructor(...args) {
         super(...args)
