@@ -20,13 +20,14 @@ export class KamisClient extends Client {
 			connectOnDeclare: true
 		}, options)
 
-        this.commands = new Collection()
-        this.aliases = new Collection()
+        this.commands = new Collection();
+        console.log();
+        this.aliases = new Collection();
 
-        this.items = new Collection()
-        this.item_aliases = new Collection()
+        this.items = new Collection();
+        this.item_aliases = new Collection();
 
-        this.responses = import('../Structures/Responses.js')
+        this.responses = import('../Structures/Responses.js');
 		if (this.options.connectOnDeclare) this.connect(); console.log('Connecting.\nConnecting..\nConnecting...');
 		if (typeof config !== 'string') this.config = config;
     }
@@ -40,36 +41,3 @@ export class KamisClient extends Client {
 
 }
 export const bot = new KamisClient(botToken)
-//bot.connect()
-//console.log(KamisClient);
-
-/* class SomeClient extends Eris.Client {
-	console.log(FireworkClient);
-	constructor() {
-		super({
-			disabledMentions: 'everyone',
-            partials: [
-				'MESSAGE',
-                'CHANNEL',
-                'REACTION'
-            ]
-        })
-		
-        this.commands = new Eris.Collection()
-        this.aliases = new Discord.Collection()
-
-        this.items = new Discord.Collection()
-        this.item_aliases = new Discord.Collection()
-
-        this.prefix = '-'
-        this.embedDurationLength = "30"
-
-        this.responses = require('./Responses.js')
-    }
-
-    log(msg) {
-        console.log('> ' + msg);
-    }
-}
-export const cm = new Collection(); */
-//export default Eris(botToken, {intents: ["allNonPrivileged",]});

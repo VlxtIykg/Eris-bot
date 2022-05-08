@@ -1,6 +1,6 @@
 import { Command } from '../../Structures/Command.js'
 
-module.exports = class Help extends Command {
+export class Help extends Command {
 	constructor(client) {
 		super(client, {
 			name: 'info',

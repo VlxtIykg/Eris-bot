@@ -4,7 +4,7 @@ This is purely for me to learn the extent of eris until interactions are forced.
 
 # Process of what has been done
 
-I haven't uploaded to github in 8 days, what I have done is
+I haven't uploaded to github in 8 days. Today is May 8 2022, what I have done is
 
 -Create a json and env parser <br>
 -Create a database with a table of how I want things to be <br>
@@ -25,3 +25,6 @@ How to know what to call?
 The second line with "ClassName": [class yourClassName ?. extends otherClassName]
 </sub>
 -Add a command handler
+-Fixed all module null prototype
+-Pending: Trying to fix command not being detected
+-Pending: Trying to understand why items being added by the event is not being read as a command whereas the help command registers?

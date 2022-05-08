@@ -6,8 +6,6 @@ import { Event } from '../Structures/Event.js'
 export class Ready extends Event {
     constructor(...args) {
         super(...args)
-        console.log(...args);
-        console.log("hi");
     }
     async run() {
         console.log('> Adding items!');
