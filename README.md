@@ -2,7 +2,13 @@
 
 This is purely for me to learn the extent of eris until interactions are forced.
 
-# Process of what has been done
+# To do list
+-Pending: Trying to fix command not being detected
+-Completed: Trying to understand why items being added by the event is not being read as a command whereas the help command registers?
+    > this.client.items.set() adds it to the collection items which requires the command check that gets the args to check if item exists
+    > this.client.commands.set() adds it as a command so it can be ran by just -commandName
+
+# Process of what has been done the past 8 days
 
 I haven't uploaded to github in 8 days. Today is May 8 2022, what I have done is
 
@@ -26,5 +32,3 @@ The second line with "ClassName": [class yourClassName ?. extends otherClassName
 </sub>
 -Add a command handler
 -Fixed all module null prototype
--Pending: Trying to fix command not being detected
--Pending: Trying to understand why items being added by the event is not being read as a command whereas the help command registers?
