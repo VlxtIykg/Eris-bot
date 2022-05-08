@@ -1,17 +1,17 @@
 import * as fs from 'fs';
-//const categories = fs.readdirSync('./commands/');
+const categories = fs.readdirSync('./preSetCommands/');
 
-export function commands(client) {
+export function preSetData(client) {
     try {
-        //categories.forEach(async (category) => {
-            fs.readdir(`./commands/`, async (err) => {
-                if(err) return console.error(`${err} - Commands.js line 8`)
-                const commands = fs.readdirSync(`./commands/`).filter(p => p.endsWith('.js'));
+        categories.forEach(async (category) => {
+            fs.readdir(`./preSetCommands/${category}/`, async (err) => {
+                if(err) return console.error(`${err}`)
+                const commands = fs.readdirSync(`./preSetCommands/${category}`).filter(p => p.endsWith('.js'));
                 for(const file of commands) {
-                    const f = await import(`../commands/${file}`)
+                    const f = await import(`../preSetCommands/${category}/${file}`)
                     const wantedClass = f.Help
+                    //console.log(wantedClass);
                     const command = new wantedClass(client)
-                    //console.log(client.commands.set(command.name.toLowerCase(), command));
                     client.commands.set(command.name.toLowerCase(), command)
                     if(command.aliases && Array.isArray(command.aliases)) {
                         for (let i = 0; i < command.aliases.length; i++) {
@@ -20,7 +20,7 @@ export function commands(client) {
                     }
                 }
             })
-        //})
+        })
     } catch (error) {
         console.error(error)
     }

@@ -1,10 +1,10 @@
-import Command from '../../Structures/Command'
-import defaultExport from '../../onStart/startUp.js'
+import { Command } from '../../Structures/Command.js'
+import { bot } from '../../onStart/startUp.js'
 import * as fs from 'fs'
-import { ClassicEmbed } from '../../Other_Dependencies/embed'
+import { ClassicEmbed } from '../../Other_Dependencies/embed.js'
 const categories = fs.readdirSync('./commands/')
 import { prefix } from '../../data/parser.js'
-let prefix = prefix('../data')
+let botPrefix = prefix('../data')
 
 export class Help extends Command {
 	constructor(client) {
@@ -14,7 +14,7 @@ export class Help extends Command {
 		})
 	}
 	async run(client, message, args) {
-        const embed = new ClassicEmbed('778323', 'Help', `Prefix: **${prefix}`, ["KamiBot", "https://i.imgur.com/fVxJR2t.jpg"])
+        const embed = new ClassicEmbed('778323', 'Help', `botPrefix: **${botPrefix}`, ["KamiBot", "https://i.imgur.com/fVxJR2t.jpg"])
 
         categories.forEach(async (category) => {
 			const helpCommands = []
@@ -31,7 +31,7 @@ export class Help extends Command {
 			const categoryName = category.charAt(0).toUpperCase() + category.slice(1)
 			embed.addField(`${categoryName} (${commandsFile.length} commands)`, `${categoryCommands}`)
 		})
-		await defaultExport.createMessage(message.channel.id, {embeds: [embed]})
+		await bot.createMessage(message.channel.id, {embeds: [embed]})
 	}
 }
 

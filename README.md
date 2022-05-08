@@ -3,10 +3,10 @@
 This is purely for me to learn the extent of eris until interactions are forced.
 
 # To do list
--Pending: Trying to fix command not being detected
--Completed: Trying to understand why items being added by the event is not being read as a command whereas the help command registers?
-    > this.client.items.set() adds it to the collection items which requires the command check that gets the args to check if item exists
-    > this.client.commands.set() adds it as a command so it can be ran by just -commandName
+-Pending: Trying to fix command not being detected <br>
+-Completed: Trying to understand why items being added by the event is not being read as a command whereas the help command registers?<br>
+    > this.client.items.set() adds it to the collection items which requires the command check that gets the args to check if item exists <br>
+    > this.client.commands.set() adds it as a command so it can be ran by just -commandName <br>
 
 # Process of what has been done the past 8 days
 

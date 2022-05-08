@@ -11,6 +11,7 @@ export class Help extends Command {
         })
     }
     async runCommand(client, message, args) {
+        console.log('Does this even work? Console log where?');
         const embed = new ClassicEmbed('000000', "Just a test");
         await bot.createMessage(message.channel.id, {embeds: [embed]})
     }
